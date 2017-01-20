@@ -29,3 +29,5 @@ EXPOSE 3306
 #默认启动行为
 RUN #!/bin/bash
 RUN mysqld_safe
+
+RUN ping 127.0.0.1
