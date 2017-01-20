@@ -1,5 +1,5 @@
 #Version 1.0.1
-FROM mysql:latest
+FROM centos
 
 MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 
