@@ -28,4 +28,4 @@ EXPOSE 3306
 
 #默认启动行为
 #ENTRYPOINT #!/bin/bash
-ENTRYPOINT mysqld_safe
+CMD mysqld_safe
