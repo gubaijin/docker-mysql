@@ -1,5 +1,5 @@
 #Version 1.0.1
-FROM centos
+FROM centos:7
 
 MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 
