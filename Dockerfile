@@ -27,5 +27,6 @@ ENV LC_ALL en_US.UTF-8
 EXPOSE 3306
 
 #默认启动行为
-CMD #!/bin/bash
-CMD mysqld_safe
+ADD run.sh /root/run.sh
+RUN chmod u+x /root/run.sh
+CMD /root/run.sh
