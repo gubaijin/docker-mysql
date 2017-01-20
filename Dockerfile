@@ -14,7 +14,7 @@ RUN rpm -ivh mysql-community-release-el7-5.noarch.rpm
 RUN yum -y install mysql-server
 
 #创建一个数据库
-#RUN mysql_install_db --user=root
+RUN mysql_install_db --user=root  --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data &
 
 #创建用户名密码
 ENV MYSQL_USER gplucky
