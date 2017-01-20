@@ -10,11 +10,11 @@ WORKDIR /home/mysql
 RUN yum -y install mysql-server
 
 #创建一个数据库
-#RUN mysql_install_db --user=root
+RUN mysql_install_db --user=root
 
 #创建用户名密码
-#ENV MYSQL_USER gplucky
-#ENV MYSQL_PASS gplucky
+ENV MYSQL_USER gplucky
+ENV MYSQL_PASS gplucky
 
 #让容器支持中文
 ENV LC_ALL en_US.UTF-8
