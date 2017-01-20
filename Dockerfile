@@ -4,11 +4,17 @@ FROM mysql:latest
 MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 
 #设置工作目录
-WORKDIR /home/workdir/mysql
+WORKDIR /home/mysql
 
-service mysqld start
+#安装mysql
+RUN yum -y install mysql
 
-mysqladmin -u gplucky password gplucky
+#创建一个数据库
+#RUN mysql_install_db --user=root
+
+#创建用户名密码
+#ENV MYSQL_USER gplucky
+#ENV MYSQL_PASS gplucky
 
 #让容器支持中文
 ENV LC_ALL en_US.UTF-8
