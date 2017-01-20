@@ -7,7 +7,7 @@ MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 WORKDIR /home/mysql
 
 #安装mysql
-RUN yum -y install mysql-server
+RUN yum -y install mysql
 
 #创建一个数据库
 RUN mysql_install_db --user=root
