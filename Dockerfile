@@ -28,4 +28,4 @@ EXPOSE 3306
 
 #默认启动行为
 RUN #!/bin/bash
-RUN mysql_safe
+RUN mysqld_safe
