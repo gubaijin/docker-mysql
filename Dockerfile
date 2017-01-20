@@ -4,7 +4,7 @@ FROM centos
 MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 
 #设置工作目录
-WORKDIR /home/mysql
+WORKDIR /root/
 
 RUN yum -y install wget
 RUN wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
