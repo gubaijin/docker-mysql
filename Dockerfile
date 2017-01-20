@@ -27,5 +27,5 @@ ENV LC_ALL en_US.UTF-8
 EXPOSE 3306
 
 #默认启动行为
-#ENTRYPOINT #!/bin/bash
+CMD #!/bin/bash
 CMD mysqld_safe
