@@ -27,7 +27,5 @@ ENV LC_ALL en_US.UTF-8
 EXPOSE 3306
 
 #默认启动行为
-RUN #!/bin/bash
-RUN mysqld_safe
-
-RUN ping 127.0.0.1
+#ENTRYPOINT #!/bin/bash
+ENTRYPOINT mysqld_safe
