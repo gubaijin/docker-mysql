@@ -6,8 +6,6 @@ MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 #设置工作目录
 WORKDIR /root/
 
-RUN export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
-
 #安装mysql
 RUN yum -y install mysql-server mysql-devel mysql
 
