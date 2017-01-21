@@ -1,2 +1,2 @@
 #!/bin/bash
-mysqld_safe
+service mysqld start
