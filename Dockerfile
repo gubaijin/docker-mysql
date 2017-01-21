@@ -6,12 +6,12 @@ MAINTAINER Kevin_Gu "gubaijing2004@163.com"
 #设置工作目录
 WORKDIR /root/
 
+#安装mysql
+RUN yum -y install mysql-server mysql-devel mysql
+
 RUN yum -y install wget
 RUN wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 RUN rpm -ivh mysql-community-release-el7-5.noarch.rpm
-
-#安装mysql
-RUN yum -y install mysql-server
 
 #创建一个数据库
 RUN mysql_install_db --user=root  --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data &
