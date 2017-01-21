@@ -26,10 +26,13 @@ ENV MYSQL_PASS gplucky
 #让容器支持中文
 ENV LC_ALL en_US.UTF-8
 
-#对外暴露端口
-EXPOSE 3306
+RUN /etc/init.d/mysql start \
+    && mysql -uroot -e "grant all privileges on *.* to 'root'@'%' identified by '1';" \
+    && mysql -uroot -e "grant all privileges on *.* to 'root'@'localhost' identified by '1';" 
 
-#默认启动行为
-ADD run.sh /root/run.sh
-RUN chmod u+x /root/run.sh
-CMD /root/run.sh
+RUN sed -Ei 's/^(bind-address|log)/#&/' /etc/mysql/my.cnf \
+    && echo 'skip-host-cache\nskip-name-resolve' | awk '{ print } $1 == "[mysqld]" && c == 0 { c = 1; system("cat") }' /etc/mysql/my.cnf > /tmp/my.cnf \
+    && mv /tmp/my.cnf /etc/mysql/my.cnf
+
+EXPOSE 3306  
+CMD ["/usr/bin/mysqld_safe"]
