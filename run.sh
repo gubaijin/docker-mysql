@@ -1,2 +1,2 @@
 #!/bin/bash
-service mysqld start
+sudo service mysqld start
